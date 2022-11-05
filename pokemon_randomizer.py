@@ -1,4 +1,4 @@
-from PokemonAssignerClass import PokemonAssigner
+from pokemon_assigner_class import PokemonAssigner
 
 # Get the necessary parameters
 game = int(input("Select game (1 for crystal and 2 for emerald): "))
