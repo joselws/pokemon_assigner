@@ -1,6 +1,7 @@
 Mightyena
 Linoone
 Beautifly
+Masquerain
 Dustox
 Ludicolo
 Shiftry
@@ -8,6 +9,9 @@ Swellow
 Pelipper
 Gardevoir
 Breloom
+Medicham
+Roselia
+Zangoose
 Slaking
 Vigoroth
 Ninjask
@@ -51,6 +55,7 @@ Cacturne
 Altaria
 Seviper
 Solrock
+Lunatone
 Whiscash
 Crawdaunt
 Claydol
