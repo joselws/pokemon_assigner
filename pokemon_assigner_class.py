@@ -202,6 +202,11 @@ class PokemonAssigner:
 
     def assign_gen_3_game(self, game: int) -> bool:
         """Returns True on successful operation"""
+
+        if self.game is not Game.RSE:
+            print(f"RSE game must be selected. \
+                You selected {self.game}")
+            return False
         try:
             self.gen_game = Gen3Game(game)
             self.pokemons_to_exclude.clear()
