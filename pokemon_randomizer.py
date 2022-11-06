@@ -56,7 +56,6 @@ def main() -> None:
         )
         difficulty = int(input("Difficulty: "))
         if team.assign_difficulty(difficulty):
-            team.get_all_pokemons()
             break
 
     # Get random team
