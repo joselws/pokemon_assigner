@@ -76,9 +76,8 @@ def main() -> None:
             main()
         if option == 3:
             break
-        else:
-            print("Invalid option, terminating program.")
-            break
+        print("Invalid option, terminating program.")
+        break
 
 
 if __name__ == "__main__":

@@ -1,5 +1,10 @@
+"""
+Tests for the PokemonAssigner class
+"""
+
+
 import unittest
-from pokemon_assigner_class import PokemonAssigner, Game, Gen3Game, Difficulty
+from pokemon_assigner_class import PokemonAssigner, Game
 
 
 class TestPokemonAssigner(unittest.TestCase):
@@ -17,7 +22,6 @@ class TestPokemonAssigner(unittest.TestCase):
         self.assertFalse(team.pokemons_to_exclude)
         self.assertEqual(team.team_size, 3)
 
-    
     # TESTS: valid_team_size static method
 
     def test_valid_team_size(self) -> None:
@@ -35,7 +39,6 @@ class TestPokemonAssigner(unittest.TestCase):
         """Returns false if an error is encountered"""
         self.assertFalse(PokemonAssigner.valid_team_size("test"))
 
-    
     # TESTS: assign_game method
 
     def test_assign_game_crystal(self) -> None:
@@ -67,7 +70,6 @@ class TestPokemonAssigner(unittest.TestCase):
         self.assertFalse(team1.assign_game(0))
         self.assertFalse(team2.assign_game(4))
 
-    
     # TEST: get_all_pokemons
 
     def test_get_all_pokemons_crystal(self) -> None:
@@ -106,7 +108,6 @@ class TestPokemonAssigner(unittest.TestCase):
         self.assertIn("Wormadam", team.all_game_pokemons)
         self.assertIn("Staraptor", team.all_game_pokemons)
 
-
     # TEST: exclude_pokemons
 
     def test_assert_exclude_pokemons(self) -> None:
@@ -137,7 +138,6 @@ class TestPokemonAssigner(unittest.TestCase):
         team.exclude_pokemons()
         self.assertListEqual(all_pokemon_list, team.all_game_pokemons)
 
-
     # TEST: assign_gen_3_game
 
     def test_assign_gen_3_game_invalid_game(self) -> None:
@@ -147,7 +147,7 @@ class TestPokemonAssigner(unittest.TestCase):
         team.assign_game(1)
         self.assertFalse(team.assign_gen_3_game(2))
         self.assertListEqual(team.pokemons_to_exclude, [])
-    
+
     def test_assign_gen_3_game_ruby(self) -> None:
         """assign_gen_3_game works correctly on ruby"""
 
@@ -208,12 +208,11 @@ class TestPokemonAssigner(unittest.TestCase):
         self.assertListEqual(team.pokemons_to_exclude, [])
         self.assertListEqual(all_initial_pokemon, team.all_game_pokemons)
 
-
     # TEST: assign_difficulty
 
     def test_assign_difficulty_invalid(self) -> None:
         """returns false given an invalid difficulty choice"""
-        
+
         team = PokemonAssigner(4)
         team.assign_game(1)
         self.assertFalse(team.assign_difficulty(0))
@@ -238,6 +237,8 @@ class TestPokemonAssigner(unittest.TestCase):
         self.assertTrue(team.assign_difficulty(2))
         self.assertListEqual(team.all_game_pokemons, all_pokemons)
         self.assertListEqual(team.pokemons_to_exclude, [])
+
+    # TEST: get_team method
 
     def test_get_team(self) -> None:
         """Get team works correctly"""
