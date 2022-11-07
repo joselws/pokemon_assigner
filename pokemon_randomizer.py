@@ -2,6 +2,7 @@
 User interface with the Pokemon Randomizer program
 """
 
+import sys
 from pokemon_assigner_class import PokemonAssigner, Game
 
 
@@ -74,10 +75,11 @@ def main() -> None:
             continue
         if option == 2:
             main()
-        if option == 3:
-            break
-        print("Invalid option, terminating program.")
-        break
+        elif option == 3:
+            sys.exit()
+        else:
+            print("Invalid option, terminating program.")
+            sys.exit()
 
 
 if __name__ == "__main__":
