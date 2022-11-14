@@ -23,9 +23,9 @@ class PokemonAssigner():
             self.available_pokemons.clear()
 
         if self.game == 1:
-            filename = '/home/joselws/Documents/python/fun/resources/pokemon_crystal.txt'
+            filename = 'resources/pokemon_crystal.txt'
         elif self.game == 2:
-            filename = '/home/joselws/Documents/python/fun/resources/pokemon_emerald.txt'
+            filename = 'resources/pokemon_emerald.txt'
 
         # Get all pokemon from this file
         with open(filename) as file:
